@@ -24,7 +24,7 @@ jobs:
           gcloud builds submit --tag gcr.io/${{ secrets.GCP_PROJECT_ID }}/cloud-run-gh-actions
       - name: Deploy to Cloud Run
         run: |
-          gcloud run deploy my-service \
+          gcloud run deploy cloud-run-gh-actions \
             --image gcr.io/${{ secrets.GCP_PROJECT_ID }}/cloud-run-gh-actions \
             --region asia-southeast2 \
             --platform managed \
